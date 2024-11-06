@@ -1,6 +1,5 @@
 <?php
-session_start();
-include('validate.php'); // Include validation file
+include('validate.php');
 if (!isset($_POST['submit'])) {
     echo "<p style='color: red;'>Please log in.</p>";
 }
