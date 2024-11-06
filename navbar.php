@@ -7,7 +7,7 @@
         background-color: #f8f9fa;
     }
 
-    .nav-links {
+    .navbarlinks {
         display: flex;
         gap: 20px;
         flex: 1;
@@ -20,7 +20,7 @@
 </style>
 
 <nav>
-    <div class="nav-links">
+    <div class="navbarlinks">
         <a href="home.php">Home</a>
         <a href="services.php">Services</a>
         <a href="profile.php">Profile</a>
