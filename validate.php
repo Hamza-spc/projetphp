@@ -1,6 +1,4 @@
 <?php
-$usernameError = $emailError = $phoneError = $passwordError = $confirmPasswordError = "";
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $username = trim($_POST['username']);
     $email = trim($_POST['email']);
@@ -8,7 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Regex patterns
+    $usernameError = $emailError = $phoneError = $passwordError = $confirmPasswordError = "";
+
     if (empty($username) || !preg_match('/^[a-zA-Z0-9]{3,20}$/', $username)) {
         $usernameError = "Invalid username (3-20 letters/numbers)";
     }
@@ -25,8 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         $confirmPasswordError = "Passwords do not match";
     }
 
-    // Check if there are no errors
     if (empty($usernameError) && empty($emailError) && empty($phoneError) && empty($passwordError) && empty($confirmPasswordError)) {
+        session_start();
         $_SESSION['username'] = $username;
         header("Location: home.php");
     }
