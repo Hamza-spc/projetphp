@@ -13,6 +13,6 @@ include('navbar.php');
     <title>Services</title>
 </head>
 <body>
-    <h1>Welcome, <?php echo $_SESSION['username']; ?>! this is our services</h1>
+    <h1>Welcome, <?php echo $_SESSION['username']; ?>! these are our services</h1>
 </body>
 </html>
